@@ -1,0 +1,229 @@
+info:
+  title: 'Two Towers'
+  world: 'TwoTowers'
+  version: 1.0
+  type: ctw
+  creators:
+  - BenjaminCrespo
+  - iChristian_
+  contributors:
+  - jozzmcozz
+  spawn: 0.5,10,-2.5,180,2
+
+remove-drops:
+- leather helmet
+- leather chestplate
+- leather leggings
+- leather boots
+- golden carrot
+
+repair-drops:
+- iron sword
+- iron axe
+- bow
+
+regions:
+  wool-chest-green:
+    type: point
+    point: 93,60,-68
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not break this chest.'
+  wool-chest-lime:
+    type: point
+    point: 93,60,61
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not break this chest.'
+  wool-chest-lightblue:
+    type: point
+    point: -92,60,-68
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not break this chest.'
+  wool-chest-blue:
+    type: point
+    point: -92,60,62
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not break this chest.'
+  wool-tower-lime:
+    type: sphere
+    center: 88,50,60
+    radius: 5
+    height: 14
+    flags:
+      enter:
+        who: 'red'
+        message: '&cYou may not enter in your wool room.'
+      build:
+        who: 'red'
+        message: '&cYou may not build in your wool room.'
+  wool-tower-green:
+    type: sphere
+    center: 89,50,-67
+    radius: 5
+    height: 14
+    flags:
+      enter:
+        who: 'red'
+        message: '&cYou may not enter in your wool room.'
+      build:
+        who: 'red'
+        message: '&cYou may not build in your wool room.'
+  wool-tower-lightblue:
+    type: sphere
+    center: -87,50,-67
+    radius: 5
+    height: 14
+    flags:
+      enter:
+        who: 'blue'
+        message: '&cYou may not enter in your wool room.'
+      build:
+        who: 'blue'
+        message: '&cYou may not build in your wool room.'
+  wool-tower-blue:
+    type: sphere
+    center: -87,50,61
+    radius: 5
+    height: 14
+    flags:
+      enter:
+        who: 'blue'
+        message: '&cYou may not enter in your wool room.'
+      build:
+        who: 'blue'
+        message: '&cYou may not build in your wool room.'
+  wool-place-lime:
+    type: point
+    point: -56,20,-3
+    flags:
+      build:
+        allow: 'true'
+        who: '*'
+  wool-place-green:
+    type: point
+    point: -56,20,-2
+    flags:
+      build:
+        allow: 'true'
+        who: '*'
+  wool-place-lightblue:
+    type: point
+    point: 57,19,-2
+    flags:
+      build:
+        allow: 'true'
+        who: '*'
+  wool-place-blue:
+    type: point
+    point: 57,19,-3
+    flags:
+      build:
+        allow: 'true'
+        who: '*'
+  blue-spawn:
+    type: cuboid
+    min: -97,8,1
+    max: -103,18,-7
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not build in the spawn area.'
+  red-spawn:
+    type: cuboid 
+    min: 98,8,-7
+    max: 104,20,1
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not build in the spawn area.'
+  everywhere:
+    type: global
+    flags:
+      kill_player:
+        who: '*'
+        allow: true
+        triggers:
+          give_loadout:
+            loadout:
+              4:
+                item: golden apple
+                amount: 1
+
+loadout:
+  effects:
+  - damage resistance:5,5
+  helmet:  
+    item: leather helmet
+  chestplate:
+    item: leather chestplate
+  leggings:
+    item: iron leggings
+  boots:
+    item: leather boots
+  0:
+    item: iron sword
+  1:
+    item: bow
+  2:
+    item: iron pickaxe
+    enchants:
+    - dig_speed:1
+    - durability:3
+  3:
+    item: iron axe
+  4:
+    item: golden apple
+    amount: 2
+  5:
+    item: log
+    amount: 64
+  6:
+    item: glass
+    amount: 64
+  7:
+    item: golden carrot
+    amount: 32
+  8:
+    item: bucket
+  27:
+    item: arrow
+    amount: 32
+
+teams:
+  blue:
+    spawns:
+    - -101.5,9,-0.5,-120,2
+    - -101.5,9,-5.5,-56,2
+    title: Blue
+    max: 25
+    wools:
+      blue:
+        name: Blue Wool
+        chest: -92,60,62
+        monument: 57,19,-3
+      lightblue:
+        name: Light Blue Wool
+        chest: -92,60,-68
+        monument: 57,19,-2
+  red:
+    spawns:
+    - 102.5,9,-5.5,58,2
+    - 102.5,9,-0.5,121,2
+    title: Red
+    max: 25
+    wools:
+      lime:
+        name: Lime Wool
+        chest: 93,60,61
+        monument: -56,20,-3
+      green:
+        name: Green Wool
+        chest: 93,60,-68
+        monument: -56,20,-2
